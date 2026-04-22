@@ -1,4 +1,3 @@
-const API_KEY = 'AIzaSyB9qD90l1vnOMEvCnRDsVIkvFcVay26f80';
 
 const platformData = {
     omni: { badge: "Omni-Channel Engine", title: "Dominate <span class='gradient-text'>Every Platform</span>", desc: "Generate a complete, multi-platform content strategy from a single idea.", colorPrimary: "#9d4edd", colorSecondary: "#ff758f", isWide: true },
@@ -140,13 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
         loadingArea.classList.remove('hidden');
 
         try {
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`, {
+            const response = await fetch(`/api/generate`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    contents: [{ parts: [{ text: prompt }] }],
-                    generationConfig: { responseMimeType: "application/json" }
-                })
+                body: JSON.stringify({ prompt: prompt })
             });
 
             if (!response.ok) {
@@ -366,9 +362,9 @@ Format JSON: { "tweets": [..], "virality_score": 90, "virality_reason": ".." }`;
             const textToRefine = itemBeingRefined.textContent;
             const prompt = `Rewrite this content based on the instruction: "${instruction}". \n\nOriginal Text: "${textToRefine}"\n\nReturn ONLY the rewritten text, nothing else.`;
             
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`, {
+            const response = await fetch(`/api/refine`, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                body: JSON.stringify({ prompt: prompt })
             });
 
             if (!response.ok) {
