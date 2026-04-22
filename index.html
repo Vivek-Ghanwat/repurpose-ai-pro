@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RePurpose AI | Content Engine Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-animated"></div>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header class="glass-nav">
+        <div class="logo" id="homeLogo" style="cursor:pointer;" title="Back to Home">RePurpose <span>AI</span></div>
+        <ul class="nav-links hidden" id="topNavLinks">
+            <li><a href="#" data-target="omni">Omni</a></li>
+            <li><a href="#" data-target="youtube">YouTube</a></li>
+            <li><a href="#" data-target="tiktok">TikTok</a></li>
+            <li><a href="#" data-target="instagram">Instagram</a></li>
+            <li><a href="#" data-target="linkedin">LinkedIn</a></li>
+            <li><a href="#" data-target="twitter">Twitter</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="icon-btn" id="profileBtn" title="Brand Profile Settings"><i class="fas fa-user-cog"></i></button>
+            <button class="icon-btn" id="historyBtn" title="View Drafts/History"><i class="fas fa-history"></i></button>
+            <button class="icon-btn" id="themeToggle" title="Toggle Light/Dark Mode"><i class="fas fa-sun"></i></button>
+        </div>
+    </header>
+
+    <main class="container" id="mainContainer">
+        <!-- Home / Platform Selection -->
+        <section id="homeSelection" class="active-section">
+            <div class="hero">
+                <h1>Choose Your <span class="gradient-text">Engine</span></h1>
+                <p>Select a platform to generate highly optimized content, or use Omni for everything.</p>
+            </div>
+            
+            <div class="platform-grid-home">
+                <div class="platform-card" data-target="omni">
+                    <div class="card-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Omni-Channel</h3>
+                    <p>All platforms at once</p>
+                </div>
+                <div class="platform-card" data-target="youtube">
+                    <div class="card-icon" style="color: #FF0050;"><i class="fab fa-youtube"></i></div>
+                    <h3>YouTube</h3>
+                    <p>Titles, Tags & SEO</p>
+                </div>
+                <div class="platform-card" data-target="tiktok">
+                    <div class="card-icon" style="color: #00F2FE;"><i class="fab fa-tiktok"></i></div>
+                    <h3>TikTok / Shorts</h3>
+                    <p>Viral Video Scripts</p>
+                </div>
+                <div class="platform-card" data-target="instagram">
+                    <div class="card-icon" style="color: #E1306C;"><i class="fab fa-instagram"></i></div>
+                    <h3>Instagram</h3>
+                    <p>Captions & Hashtags</p>
+                </div>
+                <div class="platform-card" data-target="linkedin">
+                    <div class="card-icon" style="color: #0077B5;"><i class="fab fa-linkedin"></i></div>
+                    <h3>LinkedIn</h3>
+                    <p>Thought Leadership</p>
+                </div>
+                <div class="platform-card" data-target="twitter">
+                    <div class="card-icon" style="color: #1DA1F2;"><i class="fab fa-twitter"></i></div>
+                    <h3>Twitter / X</h3>
+                    <p>Threads & Tweets</p>
+                </div>
+            </div>
+
+            <div class="info-section glass-panel">
+                <h2>Why RePurpose AI?</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-bolt" style="color: #FFD700;"></i>
+                        <h4>10x Your Output</h4>
+                        <p>Transform a single idea into a week's worth of highly optimized content across 5 different social platforms instantly.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-fire" style="color: #FF4D6D;"></i>
+                        <h4>Viral Predictor AI</h4>
+                        <p>Every generation includes a unique Virality Score (1-100) and reasoning based on current social media algorithms.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-magic" style="color: #BB86FC;"></i>
+                        <h4>Refine & Create</h4>
+                        <p>Rewrite any hook or caption using the magic wand, and get perfect Midjourney image prompts included automatically.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Generator Section -->
+        <section id="generatorArea" class="hidden-section">
+            <button id="backBtn" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Platforms</button>
+            
+            <div class="hero glass-panel">
+                <div class="badge" id="heroBadge">Engine</div>
+                <h1 id="heroTitle">Title</h1>
+                <p id="heroDesc">Desc</p>
+            </div>
+
+            <div class="input-panel glass-panel">
+                
+                <!-- Omni-Channel Inputs -->
+                <div id="inputs-omni" class="platform-inputs hidden">
+                    <div class="form-group">
+                        <label>Core Topic / Idea (Required)</label>
+                        <input type="text" id="omni-topic" placeholder="e.g., Why AI will replace junior developers by 2028">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>General Target Audience</label>
+                            <input type="text" id="omni-audience" placeholder="e.g., Tech enthusiasts and software engineers">
+                        </div>
+                        <div class="form-group">
+                            <label>Primary Tone</label>
+                            <select id="omni-tone">
+                                <option value="Educational">Educational & Informative</option>
+                                <option value="Entertaining">Entertaining & Fast-Paced</option>
+                                <option value="Professional">Professional & Authority-building</option>
+                                <option value="Controversial">Controversial / Myth-Busting</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Must-Include Keywords (Optional)</label>
+                        <input type="text" id="omni-keywords" placeholder="e.g., Agents, LLMs, Automation">
+                    </div>
+                </div>
+
+                <!-- YouTube Inputs -->
+                <div id="inputs-youtube" class="platform-inputs hidden">
+                    <div class="form-group">
+                        <label>Video Topic / Core Idea</label>
+                        <input type="text" id="yt-topic" placeholder="e.g., How to build a full-stack React app in 24 hours">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Target Audience</label>
+                            <input type="text" id="yt-audience" placeholder="e.g., Beginner programmers">
+                        </div>
+                        <div class="form-group">
+                            <label>Desired Tone</label>
+                            <select id="yt-tone">
+                                <option value="Educational">Educational & Informative</option>
+                                <option value="Entertaining">Entertaining & Fast-Paced</option>
+                                <option value="Clicky">High Energy (Clicky/Hype)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Must-Include Keywords (Optional)</label>
+                        <input type="text" id="yt-keywords" placeholder="e.g., React, Tutorial, 2026">
+                    </div>
+                </div>
+
+                <!-- TikTok Inputs -->
+                <div id="inputs-tiktok" class="platform-inputs hidden">
+                    <div class="form-group">
+                        <label>Video Topic / Hook Idea</label>
+                        <input type="text" id="tk-topic" placeholder="e.g., 3 productivity hacks for ADHD">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Target Audience</label>
+                            <input type="text" id="tk-audience" placeholder="e.g., Students, Entrepreneurs">
+                        </div>
+                        <div class="form-group">
+                            <label>Pacing / Vibe</label>
+                            <select id="tk-vibe">
+                                <option value="Fast">Fast & Energetic (Subway Surfers gameplay vibe)</option>
+                                <option value="Storytime">Storytime / Authentic</option>
+                                <option value="Educational">Educational / Step-by-Step</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instagram Inputs -->
+                <div id="inputs-instagram" class="platform-inputs hidden">
+                    <div class="form-group">
+                        <label>Post / Reel Topic</label>
+                        <input type="text" id="ig-topic" placeholder="e.g., 3 tips for a cleaner desk setup">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Post Type</label>
+                            <select id="ig-type">
+                                <option value="Reel">Reel / Video</option>
+                                <option value="Carousel">Carousel</option>
+                                <option value="Single Image">Single Image</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Aesthetic / Vibe</label>
+                            <select id="ig-vibe">
+                                <option value="Aesthetic">Aesthetic & Minimalist</option>
+                                <option value="Humorous">Humorous / Meme</option>
+                                <option value="Raw">Raw & Authentic</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Call to Action (Goal)</label>
+                        <input type="text" id="ig-cta" placeholder="e.g., Save this post, Link in bio">
+                    </div>
+                </div>
+
+                <!-- LinkedIn Inputs -->
+                <div id="inputs-linkedin" class="platform-inputs hidden">
+                    <div class="form-group">
+                        <label>Professional Topic / Insight</label>
+                        <input type="text" id="li-topic" placeholder="e.g., How AI is changing software engineering">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Key Takeaway / Lesson</label>
+                            <input type="text" id="li-takeaway" placeholder="e.g., Adaptability is more important than syntax">
+                        </div>
+                        <div class="form-group">
+                            <label>Tone</label>
+                            <select id="li-tone">
+                                <option value="Thought Leadership">Thought Leadership / Insightful</option>
+                                <option value="Storytelling">Personal Story / Vulnerable</option>
+                                <option value="Actionable">Actionable / Step-by-Step</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Twitter Inputs -->
+                <div id="inputs-twitter" class="platform-inputs hidden">
+                    <div class="form-group">
+                        <label>Topic / News</label>
+                        <input type="text" id="tw-topic" placeholder="e.g., Launched my new SaaS today">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Format</label>
+                            <select id="tw-format">
+                                <option value="Thread">Long-form Thread</option>
+                                <option value="Single">Single Punchy Tweet</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Primary Goal</label>
+                            <select id="tw-goal">
+                                <option value="Engagement">Maximize Replies</option>
+                                <option value="Retweets">Maximize Retweets</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="generateBtn" class="glow-btn">
+                    <span>Generate Magic</span>
+                    <div class="loader" style="display: none;"></div>
+                </button>
+            </div>
+
+            <div id="loadingArea" class="hidden glass-panel loading-panel">
+                <div class="modern-spinner"></div>
+                <p>Analyzing algorithms and crafting SEO-optimized content...</p>
+            </div>
+
+            <div id="outputArea" class="hidden">
+                <div class="export-actions">
+                    <button class="copy-btn" id="exportPdfBtn"><i class="fas fa-file-pdf"></i> Export PDF</button>
+                    <button class="copy-btn" id="exportCsvBtn"><i class="fas fa-file-csv"></i> Export CSV</button>
+                </div>
+                <div id="outputGrid"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- History Modal -->
+    <div id="historyModal" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <h2>Saved Drafts & History</h2>
+                <button class="icon-btn" id="closeHistory"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="historyList"></div>
+        </div>
+    </div>
+
+    <!-- Refine Modal -->
+    <div id="refineModal" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <h2>Refine Content with AI ✨</h2>
+                <button class="icon-btn" id="closeRefine"><i class="fas fa-times"></i></button>
+            </div>
+            <textarea id="refineInstruction" placeholder="e.g., Make it funnier, shorten it, add emojis..." rows="3"></textarea>
+            <button id="refineSubmitBtn" class="glow-btn">Refine Now</button>
+        </div>
+    </div>
+
+    <!-- Brand Profile Modal -->
+    <div id="profileModal" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <h2><i class="fas fa-user-cog"></i> Brand Voice Profile</h2>
+                <button class="icon-btn" id="closeProfile"><i class="fas fa-times"></i></button>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Define your brand once, and the AI will automatically inject this context into every generation!</p>
+            <div class="form-group">
+                <label>Brand Name</label>
+                <input type="text" id="brandName" placeholder="e.g. Acme Corp">
+            </div>
+            <div class="form-group">
+                <label>Global Target Audience</label>
+                <input type="text" id="brandAudience" placeholder="e.g. Tech Founders, Gen Z Creators">
+            </div>
+            <div class="form-group">
+                <label>Brand Tone / Vibe</label>
+                <input type="text" id="brandTone" placeholder="e.g. Professional yet Witty, Bold">
+            </div>
+            <button class="glow-btn" id="saveProfileBtn" style="margin-top: 1rem;">Save Profile</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Built with ❤️ by RePurpose AI Content Engine</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
