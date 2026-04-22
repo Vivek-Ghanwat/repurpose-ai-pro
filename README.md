@@ -2,7 +2,7 @@
 
 RePurpose AI is a high-performance, full-stack content strategy engine designed to help creators "10x" their output. It transforms a single idea into a complete, optimized content strategy for YouTube, TikTok, Instagram, LinkedIn, and Twitter simultaneously.
 
-![UI Preview](https://raw.githubusercontent.com/Vivek-Ghanwat/repurpose-ai-pro/main/preview.png) *(Add a screenshot here!)*
+![UI Preview](https://raw.githubusercontent.com/Vivek-Ghanwat/repurpose-ai-pro/main/preview.png) 
 
 ## ✨ Key Features
 
